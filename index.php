@@ -25,8 +25,12 @@ return function ($event) use ($conn) {
     $transcriptionRawResult = $transcriptionJob->toArray();
 
     // get the result file from S3 URL
-    $resultFile = file_get_contents($transcriptionRawResult['TranscriptionJob']['Transcript']['TranscriptFileUri']
-    );
+    try {
+        $resultFile = file_get_contents($transcriptionRawResult['TranscriptionJob']['Transcript']['TranscriptFileUri']
+        );
+    } catch (Exception $exception) {
+        echo "Error getting file: " . $exception->getMessage();
+    }
 
     $result = json_decode($resultFile, true);
     $startTime = '000.00';
