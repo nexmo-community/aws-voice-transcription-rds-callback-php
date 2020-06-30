@@ -1,0 +1,19 @@
+{
+    "name": "nexmo-community/aws-voice-transcription-rds-callback-php",
+    "description": "AWS Lambda function callback script to be used by CloudWatch as a callback to store Voice Transcriptions to an RDS MySQL DB",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "adamculp",
+            "email": "adam.culp@vonage.com"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "bref/bref": "^0.5.26",
+        "aws/aws-sdk-php": "^3.138",
+        "doctrine/dbal": "2.3.5",
+        "vlucas/phpdotenv": "3.5.x-dev"
+    }
+}
