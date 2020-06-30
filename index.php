@@ -30,6 +30,7 @@ return function ($event) use ($conn) {
         );
     } catch (Exception $exception) {
         echo "Error getting file: " . $exception->getMessage();
+        exit(-1);
     }
 
     $result = json_decode($resultFile, true);
